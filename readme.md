@@ -6,6 +6,16 @@ this API need your own MongoDB Connection String, where usually we put it inside
 
 ---
 
+### Built with:
+
+<p align="start">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=js,nodejs,express,mongodb&theme=light" />
+  </a>
+</p>
+
+---
+
 ### Get all Habit
 
 ```http
