@@ -6,10 +6,10 @@ require("dotenv").config();
 const app = express();
 const port = 3000;
 const cors = require("cors");
-app.use(cors());
 
-app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 mongoose
   .connect(process.env.MONGO_URI)
@@ -26,9 +26,14 @@ app.listen(port, () => {
 
 //endpoint to create a habit in backend:
 const Habit = require("./models/habit");
-app.use("/", (req, res) => {
-  res.send("hellow world");
+app.get("/", (req, res) => {
+  res
+    .status(200)
+    .json(
+      "for more info, chckout my repo : https://github.com/zikran69/backendhabitapp",
+    );
 });
+
 app.post("/habits", async (req, res) => {
   try {
     const { title, color, repeatMode, reminder } = req.body;
